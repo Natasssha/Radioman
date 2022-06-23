@@ -25,18 +25,21 @@ class RadioTest {
         cond.setCurrentStation(8);
         assertEquals(8, cond.getCurrentStation());
     }
+
     @Test
     void shouldCurrentStation4() {
         Radio cond = new Radio();
         cond.setCurrentStation(0);
         assertEquals(0, cond.getCurrentStation());
     }
+
     @Test
     void shouldCurrentStation5() {
         Radio cond = new Radio();
         cond.setCurrentStation(1);
         assertEquals(1, cond.getCurrentStation());
     }
+
     @Test
     void shouldCurrentStation6() {
         Radio cond = new Radio();
@@ -58,6 +61,7 @@ class RadioTest {
         cond.setCurrentVolume(-100);
         assertEquals(0, cond.getCurrentVolume());
     }
+
     @Test
     void shouldMinCurrentVolume1() {
         Radio cond = new Radio();
