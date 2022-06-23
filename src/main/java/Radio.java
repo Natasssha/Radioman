@@ -1,52 +1,47 @@
 public class Radio {
     private int currentStation;
     private int currentVolume;
-    private int amountStation = 9;
+    private int maxStation = 9;
 
-
-    //
-    public Radio(int amountStation) {
-        this.amountStation = amountStation;
-        this.currentStation = amountStation;
-        this.currentVolume = currentVolume;
-    }
     public Radio() {
-
+        maxStation = 9;
     }
 
-    //
+    public Radio(int amountStation) {
+        maxStation = amountStation - 1;
+    }
     public void setCurrentStation(int currentStation) {
-        if (currentStation < 0) {
+
+        if (currentStation > maxStation) {
             return;
         }
-        if (currentStation > amountStation) {
+        if (currentStation < 0) {
             return;
         }
         this.currentStation = currentStation;
     }
-
     public int getCurrentStation() {
         return currentStation;
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume < 0) {
+
+        if (currentVolume > 100) {
             return;
         }
-        if (currentVolume > 100) {
+        if (currentVolume < 0) {
             return;
         }
         this.currentVolume = currentVolume;
     }
-
     public int getCurrentVolume() {
         return currentVolume;
     }
 
     public void setStationUp() {
 
-        if (currentStation < amountStation) {
-            currentStation = currentStation + 1;
+        if (currentStation < maxStation) {
+            currentStation++;
         } else {
             currentStation = 0;
         }
@@ -58,9 +53,9 @@ public class Radio {
 
     public void setStationDown() {
         if (currentStation > 0) {
-            currentStation = currentStation - 1;
+            currentStation--;
         } else {
-            currentStation = amountStation;
+            currentStation = maxStation;
         }
     }
 
@@ -70,8 +65,9 @@ public class Radio {
 
 
     public void setVolumeLouder() {
-        if (currentVolume < 100) currentVolume++;
-
+        if (currentVolume < 100) {
+            currentVolume++;
+        }
     }
 
     public int getVolumeLouder() {
@@ -79,12 +75,13 @@ public class Radio {
     }
 
     public void seVolumeQuieter() {
-        if (currentVolume > 0) currentVolume--;
+        if (currentVolume > 0) {
+            currentVolume--;
+        }
     }
 
     public int getVolumeQuieter() {
 
         return currentVolume;
     }
-
 }
