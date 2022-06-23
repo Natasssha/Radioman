@@ -97,7 +97,7 @@ class RadioTest {
 
     @Test
     void shouldStationDown() {
-        Radio cond = new Radio();
+        Radio cond = new Radio(10);
         cond.setStationDown(); // 0
         cond.setStationDown(); // 9
         cond.setStationDown(); // 8
